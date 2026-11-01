@@ -1,0 +1,9 @@
+{
+    "0": "Botnet ARES",
+    "1": "Brute Force",
+    "2": "Dos/DDos",
+    "3": "Infiltration",
+    "4": "Normal",
+    "5": "PortScan",
+    "6": "Web Attack"
+}
