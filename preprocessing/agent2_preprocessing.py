@@ -159,13 +159,18 @@ X_train_normal_scaled = quantile_scaler.transform(
     X_train_normal
 )
 
+# Transform the complete validation dataset.
+X_val_all_scaled = quantile_scaler.transform(X_val)
+
+# Transform the normal validation samples.
 X_val_normal_scaled = quantile_scaler.transform(
     X_val_normal
 )
 
+# Transform the test dataset.
 X_test_scaled = quantile_scaler.transform(X_test)
-
 # Clip extreme transformed values for numerical stability.
+
 X_train_normal_scaled = np.clip(
     X_train_normal_scaled, -5, 5
 )
@@ -174,14 +179,19 @@ X_val_normal_scaled = np.clip(
     X_val_normal_scaled, -5, 5
 )
 
+X_val_all_scaled = np.clip(
+    X_val_all_scaled, -5, 5
+)
+
 X_test_scaled = np.clip(
     X_test_scaled, -5, 5
 )
-
 # Convert to float32.
 X_train_normal_scaled = X_train_normal_scaled.astype(np.float32)
 
 X_val_normal_scaled = X_val_normal_scaled.astype(np.float32)
+
+X_val_all_scaled = X_val_all_scaled.astype(np.float32)
 
 X_test_scaled = X_test_scaled.astype(np.float32)
 
@@ -195,8 +205,10 @@ np.savez_compressed(
     X_train_normal=X_train_normal_scaled,
     X_val_normal=X_val_normal_scaled,
 
-    X_test=X_test_scaled,
+    X_val_all=X_val_all_scaled,
+    y_val=y_val,
 
+    X_test=X_test_scaled,
     y_test=y_test,
 
     normal_class=normal_index

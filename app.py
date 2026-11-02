@@ -163,7 +163,7 @@ c1,c2=st.columns(2)
 with c1:
     st.markdown('<div class="agent"><h3>01 · FT-Transformer</h3><p>Supervised machine learning · Multiclass threat classification</p><span class="tag">CLASSIFICATION AGENT</span><p>Learns from labelled network traffic to classify flows into IDS2025 traffic categories.</p></div>',unsafe_allow_html=True)
 with c2:
-    st.markdown('<div class="agent"><h3>02 · Autoencoder</h3><p>Unsupervised learning · Anomaly detection</p><span class="tag">ANOMALY AGENT</span><p>Learns the normal traffic profile and flags flows with higher reconstruction errors as anomalous.</p></div>',unsafe_allow_html=True)
+    st.markdown('<div class="agent"><h3>02 · Autoencoder</h3><p> Anomaly detection</p><span class="tag">ANOMALY AGENT</span><p>Learns the normal traffic profile and flags flows with higher reconstruction errors as anomalous.</p></div>',unsafe_allow_html=True)
 st.markdown("---")
 
 # 03 Individual outputs
